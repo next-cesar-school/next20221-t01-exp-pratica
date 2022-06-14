@@ -1,0 +1,13 @@
+import openpyxl
+import io
+import PIL
+
+planilha = openpyxl.load_workbook('D:\\O QUE DEIXAR\\Cursos Online\\NExT\\Projeto Final NExT - T1\\F1_imagem.xlsx')
+sheet = planilha.active
+count = 0
+
+for image in sheet._images:
+    count += 1
+    image_str = io.BytesIO(image._data())
+    imagem = PIL.Image.open(image_str)
+    imagem.save(f'D:\\O QUE DEIXAR\\Cursos Online\\NExT\\Projeto Final NExT - T1\\Imagens\\{count}.png')
