@@ -2,7 +2,7 @@ import openpyxl
 from openpyxl_image_loader import SheetImageLoader
 
 #loading the Excel File and the sheet
-wb = openpyxl.load_workbook('D:\\O QUE DEIXAR\\Cursos Online\\NExT\\Projeto Final NExT - T1\\F1_imagem.xlsx')
+planilha = openpyxl.load_workbook('D:\\O QUE DEIXAR\\Cursos Online\\NExT\\Projeto Final NExT - T1\\F1_imagem.xlsx')
 sheet = planilha['Plan1']
 
 #calling the image_loader
