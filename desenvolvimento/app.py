@@ -17,7 +17,8 @@ app = Flask(__name__)
 def rota_cadastro():
     if 'arquivo' not in request.files:
         return 'Erro'
-    arquivo = request.files['arquivo']
+    #content = request.files['file'].read()
+    arquivo = request.files['arquivo'].read()
     print(arquivo)
     print(type(arquivo))
     extrair_imagens(arquivo)
