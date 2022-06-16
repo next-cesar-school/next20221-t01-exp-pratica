@@ -1,6 +1,7 @@
 import openpyxl
+import io
 
-def extrair_imagens (arquivo):
-    print(arquivo)
-    print(type(arquivo))
-    planilha = openpyxl.load_workbook(arquivo)
+def extract_images (file_bytes):
+    sheet = openpyxl.load_workbook(io.BytesIO(file_bytes))
+    active_sheet = sheet.active
+    return active_sheet._images
