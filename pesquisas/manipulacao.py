@@ -15,4 +15,4 @@ image = image_loader.get('A1')   #__init__('Plan1')    #get('A1')
 image.show()
 
 #saving the image
-#image.save('D:\\O QUE DEIXAR\\Cursos Online\\NExT\\Projeto Final NExT - T1\\Imagens\\image_name.jpg')
+image.save('D:\\O QUE DEIXAR\\Cursos Online\\NExT\\Projeto Final NExT - T1\\Imagens\\image_name.jpg')

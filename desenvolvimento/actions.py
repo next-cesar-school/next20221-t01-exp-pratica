@@ -1,22 +1,19 @@
 import os
 from fileinput import filename
-import datetime
-from re import I
+from pathlib import Path
+from utils import create_dir, save_image, generate_id_doc
 
-def register_document (file, list_images):
-    id_doc = generate_id_doc
-    
-    #criar uma pasta que representa o documento e salvar as imagens dentro dessa pasta    
-    print(f'Document "{filename(file)}" registered!\nID: {id_doc}')
+def register_document (list_images):
+    id_doc = generate_id_doc()
+    path_dir = create_dir(id_doc)
+    count_img = 0
+    for img in list_images:
+        name_image = f'{id_doc}_{count_img}'
+        count_img += 1
+        save_image(path_dir, img, name_image)
+    #print(f'Document "{os.path.basename(file)}" registered!\nID_Document: {id_doc}\nDirectory: {path_dir}')
+    return path_dir
 
-def generate_id_doc ():
-    now = datetime.datetime.now()
-    return now.strftime("%m%d%Y%I%M%S%f")
-
-def register_image (id_doc, count, image):
-    #id_doc_count
-    print(f'Image "{filename}" registered!')
-
-def remove_document (id_doc):
+def remove_document (dir_doc):
     #apagar a pasta que tem o id que representa o doc
-    os.remove(id_doc)
+    os.remove(dir_doc)
