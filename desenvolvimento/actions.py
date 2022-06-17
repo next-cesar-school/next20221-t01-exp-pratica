@@ -1,7 +1,8 @@
-import os
-from fileinput import filename
+import shutil
 from pathlib import Path
-from utils import create_dir, save_image, generate_id_doc
+
+from utils import create_dir, generate_id_doc, save_image
+
 
 def register_document (list_images):
     id_doc = generate_id_doc()
@@ -11,20 +12,8 @@ def register_document (list_images):
         name_image = f'{id_doc}_{count_img}'
         count_img += 1
         save_image(path_dir, img, name_image)
-    #print(f'Document "{os.path.basename(file)}" registered!\nID_Document: {id_doc}\nDirectory: {path_dir}')
-    return path_dir
+    return id_doc
 
 def remove_document (dir_doc):
     #apagar a pasta que tem o id que representa o doc
-    os.remove(dir_doc)
-
-'''def __init__ (self, name, id, quantity, directory):
-    self.name = name
-    self.id = id
-    self.quantity = quantity
-    self.directory = directory'''
-
-'''def json_doc (self):
-    return {
-        'Document name' = self.
-    }'''
+    shutil.rmtree(Path(Path.home(), dir_doc))

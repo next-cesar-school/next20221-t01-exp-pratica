@@ -1,8 +1,10 @@
 import datetime
 import io
 import os
-import PIL
 from pathlib import Path
+
+import PIL
+
 
 def generate_id_doc ():
     now = datetime.datetime.now()
