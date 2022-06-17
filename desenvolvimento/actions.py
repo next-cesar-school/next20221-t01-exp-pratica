@@ -17,3 +17,14 @@ def register_document (list_images):
 def remove_document (dir_doc):
     #apagar a pasta que tem o id que representa o doc
     os.remove(dir_doc)
+
+'''def __init__ (self, name, id, quantity, directory):
+    self.name = name
+    self.id = id
+    self.quantity = quantity
+    self.directory = directory'''
+
+'''def json_doc (self):
+    return {
+        'Document name' = self.
+    }'''
